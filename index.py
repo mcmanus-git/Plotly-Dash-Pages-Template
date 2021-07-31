@@ -1,0 +1,32 @@
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Input, Output
+import dash_bootstrap_components as dbc
+from home import create_page_home
+from page_2 import create_page_2
+from page_3 import create_page_3
+from app import app
+
+
+app.config.suppress_callback_exceptions = True
+
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+
+@app.callback(Output('page-content', 'children'),
+              [Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/page-2':
+        return create_page_2()
+    if pathname == '/page-3':
+        return create_page_3()
+    else:
+        return create_page_home()
+
+
+if __name__ == '__main__':
+    app.run_server(debug=True)
