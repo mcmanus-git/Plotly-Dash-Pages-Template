@@ -1,1 +1,1 @@
-web: gunicorn app:server
+web: gunicorn Plotly-Dash-Pages-Template.wsgi --log-file -
