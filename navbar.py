@@ -19,7 +19,7 @@ def create_navbar():
         brand="Home",
         brand_href="/home",
         sticky="top",
-        color="primary",
+        color="dark",
         dark=True,
     )
 
