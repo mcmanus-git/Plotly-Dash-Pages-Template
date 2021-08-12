@@ -1,12 +1,10 @@
-import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-import dash_bootstrap_components as dbc
 from home import create_page_home
 from page_2 import create_page_2
 from page_3 import create_page_3
-from app import app, server
+from app import app
 
 server = app.server
 app.config.suppress_callback_exceptions = True
